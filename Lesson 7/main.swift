@@ -51,7 +51,7 @@ if example.isBox() {
 struct BancAccount {
     var accountNumber: Int
     var balance: Double
-    var strDouble = { (num: Double) -> String in String(format: "%.2f", num) }
+    private let strDouble = { (num: Double) -> String in String(format: "%.2f", num) }
     
     func accountBalance() {
         print("Состояние счёта №\(accountNumber) = \(strDouble(balance))")
@@ -78,4 +78,3 @@ var myDebit = BancAccount(accountNumber: 314159, balance: 524669.50)
 myDebit.accountBalance()
 myDebit.addingFunds(addingFunds: 10000.00)
 myDebit.withdraw(withdrawalFunds: 4559.80)
-
